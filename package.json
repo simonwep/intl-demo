@@ -1,0 +1,24 @@
+{
+    "private": true,
+    "name": "intl-demo",
+    "version": "0.0.0",
+    "author": "Simon Reinisch <trash@reinisch.io>",
+    "license": "MIT",
+    "scripts": {
+        "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+        "build": "preact build",
+        "serve": "preact build && preact serve",
+        "dev": "preact watch",
+        "lint": "eslint src"
+    },
+    "devDependencies": {
+        "eslint": "^6.7.2",
+        "eslint-config-synacor": "^3.0.5",
+        "if-env": "^1.0.4",
+        "preact-cli": "^2.2.1"
+    },
+    "dependencies": {
+        "preact": "^10.1.1",
+        "preact-render-to-string": "^5.1.2"
+    }
+}

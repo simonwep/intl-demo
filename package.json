@@ -9,13 +9,16 @@
         "build": "preact build",
         "serve": "preact build && preact serve",
         "dev": "preact watch",
-        "lint": "eslint src"
+        "lint": "eslint src --fix"
     },
     "devDependencies": {
         "eslint": "^6.7.2",
         "eslint-config-synacor": "^3.0.5",
         "if-env": "^1.0.4",
-        "preact-cli": "^2.2.1"
+        "node-sass": "^4.13.0",
+        "preact-cli": "^2.2.1",
+        "sass-loader": "^7.3.1",
+        "sassyfication": "^0.2.0"
     },
     "dependencies": {
         "preact": "^10.1.1",

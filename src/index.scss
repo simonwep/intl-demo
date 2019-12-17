@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    background: #f5f5f5;
+    font-family: $font-family;
+}
+
+#app {
+    @include width(65vw, 15em, 60em);
+    @include height(80vh, 30em, 40em);
+    @include position(0, 0, 0, 0);
+    background: #fff;
+    border-radius: 0.75em;
+    box-shadow: 0 0.3em 1em rgba(#000, 0.1);
+    padding: 1em;
+    margin: auto;
+    position: fixed;
+}

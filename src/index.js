@@ -1,12 +1,19 @@
-import './style';
-import { Component } from 'preact';
+import {Component}    from 'preact';
+import {APISelection} from './app/api-selection';
+import './index.scss';
 
 export default class App extends Component {
-	render() {
-		return (
-			<div>
-				<h1>Hello, World!</h1>
-			</div>
-		);
-	}
+
+    changeAPI = name => {
+        /* eslint-disable no-console */
+        console.log(name);
+    };
+
+    render() {
+        return (
+            <div id="app">
+                <APISelection onSelect={this.changeAPI}/>
+            </div>
+        );
+    }
 }

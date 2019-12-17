@@ -1,0 +1,70 @@
+$item-color: #2196f3;
+
+.root {
+    font: inherit;
+    user-select: none;
+
+    > p {
+        position: relative;
+        font: inherit;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-radius: 0.15em;
+        color: $item-color;
+        cursor: pointer;
+
+        &::placeholder {
+            color: rgba(#000, 0.35);
+        }
+
+        &::before {
+            @include pseudo();
+            @include size(2px, 100%);
+            background: currentColor;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.options {
+    @include flex(column, flex-start);
+    position: absolute;
+    padding: 0.25em 0.5em;
+    margin-left: -0.5em;
+    margin-top: 0.25em;
+    border-radius: 0.2em;
+    box-shadow: 0 0.15em 0.5em rgba(#000, 0.1);
+    transform: translateY(-0.5em);
+    transition: all 0.3s;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 100;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+    }
+
+    > p {
+        position: relative;
+        transition: all 0.3s;
+        color: rgba(#000, 0.9);
+        cursor: pointer;
+
+        &:hover {
+            color: $item-color;
+        }
+    }
+}
+
+.disabled {
+    cursor: not-allowed;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}

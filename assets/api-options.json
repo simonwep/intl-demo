@@ -1,0 +1,57 @@
+{
+    "collator": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup",
+                "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "usage",
+            "default": "sort",
+            "values": [
+                "sort",
+                "search"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "sensitivity",
+            "default": "variant",
+            "values": [
+                "variant",
+                "case",
+                "accent",
+                "base"
+            ]
+        },
+        {
+            "type": "switch",
+            "name": "ignorePunctuation",
+            "default": false
+        },
+        {
+            "type": "switch",
+            "name": "numeric",
+            "default": false
+        },
+        {
+            "type": "select",
+            "name": "caseFirst",
+            "default": "false",
+            "values": [
+                "upper",
+                "lower",
+                "false"
+            ]
+        }
+    ]
+}

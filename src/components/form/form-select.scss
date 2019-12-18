@@ -1,0 +1,26 @@
+.form-select {
+    @include flex(row);
+    overflow: hidden;
+    padding: 0;
+
+    > button {
+        padding: 0.65em 0.75em;
+        transition: all 0.3s;
+        font-weight: 600;
+        font-family: $font-family;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: inherit;
+
+        &.active {
+            background: $color-sky-blue;
+            color: $color-white;
+        }
+
+        &:hover {
+            background: rgba(#000, 0.05);
+        }
+    }
+}

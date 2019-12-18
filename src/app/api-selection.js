@@ -1,5 +1,5 @@
-import {Component}  from 'preact';
-import {TextSelect} from '../components/text-select';
+import { Component }  from 'preact';
+import { TextSelect } from '../components/text-select';
 import './api-selection.scss';
 
 export class APISelection extends Component {
@@ -7,18 +7,18 @@ export class APISelection extends Component {
     state = {
         selectedAPI: 0,
         apiList: [
-            {label: 'Collator', disabled: false},
-            {label: 'DateTimeFormat', disabled: false},
-            {label: 'ListFormat', disabled: false},
-            {label: 'Locale', disabled: false},
-            {label: 'NumberFormat', disabled: false},
-            {label: 'PluralRules', disabled: false},
-            {label: 'RelativeTimeFormat', disabled: false}
+            { label: 'Collator', disabled: false },
+            { label: 'DateTimeFormat', disabled: false },
+            { label: 'ListFormat', disabled: false },
+            { label: 'Locale', disabled: false },
+            { label: 'NumberFormat', disabled: false },
+            { label: 'PluralRules', disabled: false },
+            { label: 'RelativeTimeFormat', disabled: false }
         ]
     };
 
     selectAPI = newIndex => {
-        const {state} = this;
+        const { state } = this;
 
         this.setState({
             ...state,
@@ -28,7 +28,12 @@ export class APISelection extends Component {
         this.props.onSelect(state.apiList[newIndex].label);
     };
 
-    render(_, {selectedAPI, apiList}) {
+    componentDidMount() {
+        const { apiList, selectedAPI } = this.state;
+        this.props.onSelect(apiList[selectedAPI].label);
+    }
+
+    render(_, { selectedAPI, apiList }) {
         return (
             <div id="api-selection">
                 <p>Intl.</p>

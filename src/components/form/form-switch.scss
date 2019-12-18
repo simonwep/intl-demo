@@ -1,0 +1,37 @@
+$width: 48px;
+$height: 26px;
+$kpadding: 3px;
+$radius: 50em;
+
+.form-switch {
+    @include size($height, $width);
+    position: relative;
+    border-radius: $radius;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 0;
+
+    $ksize: ($height - 2px)  - 2 * $kpadding;
+    $ktpadding: 2 * $kpadding;
+
+    &::before {
+        @include pseudo();
+        @include size($ksize);
+        top: 0;
+        left: 0;
+        margin: $kpadding;
+        border-radius: $radius;
+        background: $color-mid-gray;
+        transition: all 0.3s;
+    }
+
+    &.selected {
+        background: $color-sky-blue;
+
+        &::before {
+            margin-left: 100%;
+            background: $color-white;
+            transform: translateX(calc(-100% - #{$kpadding}));
+        }
+    }
+}

@@ -1,8 +1,7 @@
-$item-color: #2196f3;
-
 .root {
-    font: inherit;
+    position: relative;
     user-select: none;
+    font: inherit;
 
     > p {
         position: relative;
@@ -11,7 +10,7 @@ $item-color: #2196f3;
         border: none;
         outline: none;
         border-radius: 0.15em;
-        color: $item-color;
+        color: $color-sky-blue;
         cursor: pointer;
 
         &::placeholder {
@@ -37,10 +36,11 @@ $item-color: #2196f3;
     border-radius: 0.2em;
     box-shadow: 0 0.15em 0.5em rgba(#000, 0.1);
     transform: translateY(-0.5em);
+    background: $color-white;
     transition: all 0.3s;
     pointer-events: none;
+    z-index: 10;
     opacity: 0;
-    z-index: 100;
 
     &.visible {
         opacity: 1;
@@ -55,14 +55,14 @@ $item-color: #2196f3;
         cursor: pointer;
 
         &:hover {
-            color: $item-color;
+            color: $color-sky-blue;
         }
     }
 }
 
 .disabled {
     cursor: not-allowed;
-    color: red;
+    color: $color-red;
 }
 
 .hidden {

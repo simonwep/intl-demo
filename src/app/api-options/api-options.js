@@ -2,8 +2,8 @@ import { Component }     from 'preact';
 import forms           from '../../../assets/api-options';
 import { FormTextField } from '../../components/form/form-text-field';
 import { FormSelect }    from '../../components/form/form-select';
-import './api-options.scss';
 import { FormSwitch }    from '../../components/form/form-switch';
+import './api-options.scss';
 
 /* eslint-disable no-console */
 
@@ -11,7 +11,7 @@ import { FormSwitch }    from '../../components/form/form-switch';
 export class APIOptions extends Component {
 
     render({ name }) {
-        const options = forms[(name || '').toLowerCase()];
+        const options = forms[(name || '')];
 
         if (!options) {
             return (<p>Not found</p>);

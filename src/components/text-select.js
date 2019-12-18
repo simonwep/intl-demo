@@ -1,6 +1,6 @@
-import {Component}  from 'preact';
+import { Component }  from 'preact';
 import styles       from './text-select.scss';
-import {classnames} from '../js/classnames';
+import { classnames } from '../js/classnames';
 
 export class TextSelect extends Component {
 
@@ -20,7 +20,7 @@ export class TextSelect extends Component {
         this.props.onSelect(Number(e.target.dataset.index));
     };
 
-    render(props, {open}) {
+    render(props, { open }) {
         const {
             options = [],
             selected = 0
@@ -43,8 +43,8 @@ export class TextSelect extends Component {
                             [styles.disabled]: v.disabled,
                             [styles.hidden]: index === selected
                         })}
-                           data-index={index}
-                           onClick={this.selectIndex}>
+                        data-index={index}
+                        onClick={this.selectIndex}>
                             {v.label}
                         </p>
                     ))}

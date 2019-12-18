@@ -1,5 +1,6 @@
 .form-select {
     @include flex(row);
+    flex-wrap: wrap;
     overflow: hidden;
     padding: 0;
 

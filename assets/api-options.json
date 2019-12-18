@@ -1,5 +1,5 @@
 {
-    "collator": [
+    "Collator": [
         {
             "type": "text",
             "name": "locales"
@@ -51,6 +51,385 @@
                 "upper",
                 "lower",
                 "false"
+            ]
+        }
+    ],
+    "DateTimeFormat": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "dateStyle",
+            "default": "full",
+            "values": [
+                "full",
+                "long",
+                "medium",
+                "short"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "timeStyle",
+            "default": "full",
+            "values": [
+                "full",
+                "long",
+                "medium",
+                "short"
+            ]
+        },
+        {
+            "type": "number",
+            "name": "fractionalSecondDigits",
+            "value": 0,
+            "min": 0,
+            "max": 3
+        },
+        {
+            "type": "select",
+            "name": "calendar",
+            "default": "iso8601",
+            "values": [
+                "buddhist", "chinese", "coptic", "ethiopia", "ethiopic",
+                "gregory", " hebrew", "indian", "islamic", "iso8601",
+                "japanese", "persian", "roc"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "numberingSystem",
+            "default": "arab",
+            "values": [
+                "arab", "arabext", "bali", "beng", "deva", "fullwide",
+                "gujr", "guru", "hanidec", "khmr", " knda", "laoo",
+                "latn", "limb", "mlym", "mong", "mymr", "orya", "tamldec",
+                "telu", "thai", "tibt"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup", "best fit"
+            ]
+        },
+        {
+            "type": "text",
+            "name": "timeZone",
+            "default": "America/New_York"
+        },
+        {
+            "type": "switch",
+            "name": "hour12",
+            "default": false
+        },
+        {
+            "type": "select",
+            "name": "hourCycle",
+            "default": "h24",
+            "values": [
+                "h11", "h12", "h23", "h24"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "formatMatcher",
+            "default": "best fit",
+            "values": [
+                "basic", "lookup", "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "weekday",
+            "default": "long",
+            "values": [
+                "long", "short", "narrow"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "era",
+            "default": "long",
+            "values": [
+                "long", "short", "narrow"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "year",
+            "default": "numeric",
+            "values": [
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "month",
+            "default": "long",
+            "values": [
+                "long", "short", "narrow",
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "day",
+            "default": "numeric",
+            "values": [
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "hour",
+            "default": "numeric",
+            "values": [
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "minute",
+            "default": "numeric",
+            "values": [
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "second",
+            "default": "numeric",
+            "values": [
+                "numeric", "2-digit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "timeZoneName",
+            "default": "long",
+            "values": [
+                "long", "short"
+            ]
+        }
+    ],
+    "ListFormat": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup",
+                "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "type",
+            "default": "conjunction",
+            "values": [
+                "conjunction",
+                "disjunction"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "style",
+            "default": "long",
+            "values": [
+                "long", "short", "narrow"
+            ]
+        }
+    ],
+    "NumberFormat": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup",
+                "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "style",
+            "default": "decimal",
+            "values": [
+                "decimal",
+                "currency",
+                "percent",
+                "unit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "numberingSystem",
+            "default": "arab",
+            "values": [
+                "arab", "arabext", "bali", "beng", "deva", "fullwide",
+                "gujr", "guru", "hanidec", "khmr", " knda", "laoo",
+                "latn", "limb", "mlym", "mong", "mymr", "orya", "tamldec",
+                "telu", "thai", "tibt"
+            ]
+        },
+        {
+            "type": "text",
+            "name": "unit"
+        },
+        {
+            "type": "select",
+            "name": "unitDisplay",
+            "values": [
+                "long",
+                "short", "narrow"
+            ]
+        },
+        {
+            "type": "text",
+            "name": "currency"
+        },
+        {
+            "type": "text",
+            "name": "currencyDisplay",
+            "default": "symbol"
+        },
+        {
+            "type": "switch",
+            "name": "useGrouping",
+            "default": true
+        },
+        {
+            "type": "number",
+            "name": "minimumIntegerDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        },
+        {
+            "type": "number",
+            "name": "minimumFractionDigits",
+            "value": 0,
+            "min": 0,
+            "max": 20
+        },
+        {
+            "type": "number",
+            "name": "minimumSignificantDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        },
+        {
+            "type": "number",
+            "name": "maximumSignificantDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        },
+        {
+            "type": "select",
+            "name": "notation",
+            "default": "standard",
+            "values": [
+                "standard", "scientific", "engineering", "compact"
+            ]
+        }
+    ],
+    "PluralRules": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup",
+                "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "type",
+            "default": "cardinal",
+            "values": [
+                "cardinal", "ordinal"
+            ]
+        },
+        {
+            "type": "number",
+            "name": "minimumIntegerDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        },
+        {
+            "type": "number",
+            "name": "minimumFractionDigits",
+            "value": 0,
+            "min": 0,
+            "max": 20
+        },
+        {
+            "type": "number",
+            "name": "minimumSignificantDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        },
+        {
+            "type": "number",
+            "name": "maximumSignificantDigits",
+            "value": 1,
+            "min": 1,
+            "max": 21
+        }
+    ],
+    "RelativeTimeFormat": [
+        {
+            "type": "text",
+            "name": "locales"
+        },
+        {
+            "type": "select",
+            "name": "localeMatcher",
+            "default": "best fit",
+            "values": [
+                "lookup",
+                "best fit"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "numeric",
+            "default": "always",
+            "values": [
+                "always",
+                "auto"
+            ]
+        },
+        {
+            "type": "select",
+            "name": "style",
+            "default": "long",
+            "values": [
+                "long",
+                "short",
+                "narrow"
             ]
         }
     ]

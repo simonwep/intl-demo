@@ -19,8 +19,10 @@ export default class App extends Component {
     render(_, { chosenAPI }) {
         return (
             <div id="app">
-                <APISelection onSelect={this.changeAPI}/>
-                <APIOptions name={chosenAPI}/>
+                <div class="left">
+                    <APISelection onSelect={this.changeAPI}/>
+                    <APIOptions name={chosenAPI}/>
+                </div>
             </div>
         );
     }

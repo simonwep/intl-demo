@@ -1,3 +1,13 @@
+::-webkit-scrollbar {
+    width: 0.3em;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-mid-gray;
+    border-radius: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +24,17 @@ html {
     @include width(65vw, 15em, 60em);
     @include height(80vh, 30em, 40em);
     @include position(0, 0, 0, 0);
+    @include flex(row);
     background: $color-white;
     border-radius: 0.75em;
     box-shadow: 0 0.3em 1em rgba(#000, 0.1);
     padding: 1em;
     margin: auto;
     position: fixed;
+    overflow: hidden;
+
+    .left {
+        @include flex(column);
+        width: 50%;
+    }
 }

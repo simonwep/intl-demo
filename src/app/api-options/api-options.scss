@@ -1,8 +1,10 @@
 #api-options {
     @include flex(column, flex-start);
     @include font(bold, 1.2em);
+    @include size(100%);
     margin-top: 0.5em;
-    width: 50%;
+    padding-right: 0.75em;
+    overflow: auto;
 
     .option {
         @include flex(row, flex-start, space-between);

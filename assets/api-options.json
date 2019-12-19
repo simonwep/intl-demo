@@ -89,7 +89,7 @@
             "max": 3
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "calendar",
             "default": "iso8601",
             "values": [
@@ -99,7 +99,7 @@
             ]
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "numberingSystem",
             "default": "arab",
             "values": [
@@ -168,7 +168,7 @@
             ]
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "month",
             "default": "long",
             "values": [
@@ -264,7 +264,7 @@
             ]
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "style",
             "default": "decimal",
             "values": [
@@ -275,7 +275,7 @@
             ]
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "numberingSystem",
             "default": "arab",
             "values": [
@@ -340,7 +340,7 @@
             "max": 21
         },
         {
-            "type": "select",
+            "type": "drop-down",
             "name": "notation",
             "default": "standard",
             "values": [

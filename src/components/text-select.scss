@@ -30,6 +30,8 @@
 .options {
     @include flex(column, flex-start);
     position: absolute;
+    max-height: 30vh;
+    overflow: auto;
     padding: 0.5em 0.75em;
     margin-left: -0.5em;
     margin-top: 0.25em;
@@ -64,11 +66,6 @@
             color: $color-sky-blue;
         }
     }
-}
-
-.disabled {
-    cursor: not-allowed;
-    color: $color-red;
 }
 
 .hidden {

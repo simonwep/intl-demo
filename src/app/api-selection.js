@@ -5,38 +5,35 @@ import './api-selection.scss';
 export class APISelection extends Component {
 
     state = {
-        selectedAPI: 1,
+        selectedAPI: 'DateTimeFormat',
         apiList: [
-            {label: 'Collator', disabled: false},
-            {label: 'DateTimeFormat', disabled: false},
-            {label: 'ListFormat', disabled: false},
-            {label: 'NumberFormat', disabled: false},
-            {label: 'PluralRules', disabled: false},
-            {label: 'RelativeTimeFormat', disabled: false}
+            'Collator','DateTimeFormat', 'ListFormat',
+            'NumberFormat', 'PluralRules', 'RelativeTimeFormat'
         ]
     };
 
-    selectAPI = newIndex => {
+    selectAPI = newAPI => {
         const {state} = this;
 
         this.setState({
             ...state,
-            selectedAPI: newIndex
+            selectedAPI: newAPI
         });
 
-        this.props.onSelect(state.apiList[newIndex].label);
+        this.props.onSelect(newAPI);
     };
 
     componentDidMount() {
-        const {apiList, selectedAPI} = this.state;
-        this.props.onSelect(apiList[selectedAPI].label);
+        this.props.onSelect(this.state.selectedAPI);
     }
 
     render(_, {selectedAPI, apiList}) {
         return (
             <div id="api-selection">
                 <p>Intl.</p>
-                <TextSelect options={apiList} selected={selectedAPI} onSelect={this.selectAPI}/>
+                <TextSelect values={apiList}
+                    value={selectedAPI}
+                    onSelect={this.selectAPI}/>
             </div>
         );
     }

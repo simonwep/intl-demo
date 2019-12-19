@@ -15,22 +15,15 @@ export class TextSelect extends Component {
         });
     };
 
-    selectIndex = e => {
+    selectValue = e => {
         this.toggle(false);
-        this.props.onSelect(Number(e.target.dataset.index));
+        this.props.onSelect(e.target.dataset.value);
     };
 
-    render(props, {open}) {
-        const {
-            options = [],
-            selected = 0
-        } = props;
-
+    render({values = [], value = null}, {open}) {
         return (
             <div className={styles.root}>
-                <p onClick={this.toggle}>{
-                    options[selected].label
-                }</p>
+                <p onClick={this.toggle}>{value}</p>
 
                 <div
                     className={classnames({
@@ -38,14 +31,10 @@ export class TextSelect extends Component {
                         [styles.visible]: open
                     })}>
 
-                    {options.map((v, index) => (
-                        <p className={classnames({
-                            [styles.disabled]: v.disabled,
-                            [styles.hidden]: index === selected
-                        })}
-                        data-index={index}
-                        onClick={this.selectIndex}>
-                            {v.label}
+                    {values.map(v => (
+                        <p data-value={v}
+                            onClick={this.selectValue}>
+                            {v}
                         </p>
                     ))}
                 </div>

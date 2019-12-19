@@ -5,6 +5,7 @@ import {FormSelect}    from '../../components/form/form-select';
 import {FormSwitch}    from '../../components/form/form-switch';
 import './api-options.scss';
 import {FormNumber}    from '../../components/form/form-number';
+import {TextSelect}    from '../../components/text-select';
 
 /* eslint-disable no-console */
 
@@ -34,6 +35,16 @@ export class APIOptions extends Component {
                         <div class="option">
                             <p>{op.name}</p>
                             <FormSelect values={op.values}
+                                value={op.default || null}
+                                onSelect={console.log}/>
+                        </div>
+                    );
+                }
+                case 'drop-down': {
+                    return (
+                        <div class="option">
+                            <p>{op.name}</p>
+                            <TextSelect values={op.values}
                                 value={op.default || null}
                                 onSelect={console.log}/>
                         </div>

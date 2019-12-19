@@ -1,7 +1,7 @@
-import { Component }  from 'preact';
+import {Component}  from 'preact';
 import base         from './base.scss';
 import styles       from './form-select.scss';
-import { classnames } from '../../js/classnames';
+import {classnames} from '../../js/classnames';
 
 export class FormSelect extends Component {
 
@@ -9,9 +9,9 @@ export class FormSelect extends Component {
         this.props.onSelect(e.target.dataset.value);
     };
 
-    render({ values, value }) {
+    render({values, value}) {
         return (
-            <div class={classnames({
+            <div className={classnames({
                 [base['form-element']]: true,
                 [styles['form-select']]: true
             })}>
@@ -20,7 +20,7 @@ export class FormSelect extends Component {
                     <button
                         data-value={v}
                         onClick={this.selectItem}
-                        class={
+                        className={
                             classnames({
                                 [styles.active]: value === v
                             })

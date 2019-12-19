@@ -1,6 +1,6 @@
-import { APIOptions }   from './app/api-options/api-options';
-import { APISelection } from './app/api-selection';
-import { Component }    from 'preact';
+import {APIOptions}   from './app/api-options/api-options';
+import {APISelection} from './app/api-selection';
+import {Component}    from 'preact';
 import './index.scss';
 
 export default class App extends Component {
@@ -16,10 +16,10 @@ export default class App extends Component {
         });
     };
 
-    render(_, { chosenAPI }) {
+    render(_, {chosenAPI}) {
         return (
             <div id="app">
-                <div class="left">
+                <div className="left">
                     <APISelection onSelect={this.changeAPI}/>
                     <APIOptions name={chosenAPI}/>
                 </div>

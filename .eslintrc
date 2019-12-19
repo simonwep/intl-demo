@@ -17,10 +17,11 @@
         "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "never" }],
         "react/jsx-indent-props": "off",
         "react/jsx-wrap-multilines": 0,
+        "object-curly-spacing": ["error", "never"],
         "no-cond-assign": "off",
         "no-console": "error",
         "keyword-spacing": "warn",
         "eqeqeq": "error",
-        "indent": ["error", 4]
+        "indent": ["error", 4, { "SwitchCase": 1 }]
     }
 }

@@ -18,9 +18,13 @@
         &.active {
             background: $color-sky-blue;
             color: $color-white;
+
+            &:hover {
+                cursor: default;
+            }
         }
 
-        &:hover {
+        &:hover:not(.active) {
             background: rgba(#000, 0.05);
         }
     }

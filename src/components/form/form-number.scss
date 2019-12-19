@@ -1,0 +1,32 @@
+.form-number {
+    @include flex(row, stretch);
+    font-size: 1em;
+    padding: 0;
+    border-color: transparent;
+
+    button {
+        @include font(600);
+        position: relative;
+        color: $color-white;
+        outline: none;
+        border: none;
+        background: $color-sky-blue;
+        transition: all 0.3s;
+        padding: 0.65em 0.75em;
+        cursor: pointer;
+        font-family: $font-family;
+
+        .disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+            background: $color-light-gray;
+        }
+    }
+
+    .value {
+        @include font(600, 0.8em);
+        padding: 0 1em;
+        line-height: 2.1em;
+        background: $color-light-gray;
+    }
+}

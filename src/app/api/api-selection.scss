@@ -1,4 +1,20 @@
 #api-selection {
-    @include flex(row, center, flex-start);
+    @include flex(row, stretch, flex-start);
     @include font(bold, 1.2em);
+
+    > a {
+        height: 100%;
+        width: 1.8em;
+        margin-left: auto;
+
+        > svg {
+            @include size(100%);
+            fill: $color-sky-blue;
+            transition: all 0.3s;
+
+            &:hover {
+                fill: black;
+            }
+        }
+    }
 }

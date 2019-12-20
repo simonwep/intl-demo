@@ -1,6 +1,5 @@
 import {Component}          from 'preact';
 import {observer}           from 'mobx-preact';
-import apis                 from '../../../assets/apis';
 import {index}              from '../../state';
 import './api-options.scss';
 import {resolveFormElement} from '../../components/form/form';
@@ -12,7 +11,7 @@ export class APIOptions extends Component {
     };
 
     render() {
-        const {options} = apis.find(v => v.name === index.api);
+        const {options} = index.getAPI();
 
         const optionElements = options.map(op => {
             const currentValue = index.options[op.name];

@@ -6,4 +6,12 @@
     padding-right: 0.75em;
     overflow-y: auto;
     overflow-x: hidden;
+
+    > a {
+        color: $color-dark-gray;
+        width: 100%;
+        text-decoration: none;
+        border-bottom: 2px solid currentColor;
+        margin-bottom: 0.25em;
+    }
 }

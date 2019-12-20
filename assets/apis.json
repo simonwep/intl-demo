@@ -1,6 +1,9 @@
 [
     {
         "name": "Collator",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Collator#Parameters"
+        },
         "input": [
             {
                 "name": "values",
@@ -66,6 +69,9 @@
     },
     {
         "name": "DateTimeFormat",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters"
+        },
         "input": [
             {
                 "name": "year",
@@ -282,6 +288,9 @@
     },
     {
         "name": "ListFormat",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ListFormat#Parameters"
+        },
         "input": [
             {
                 "name": "values",
@@ -324,6 +333,9 @@
     },
     {
         "name": "NumberFormat",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat#Parameters"
+        },
         "input": [
             {
                 "name": "value",
@@ -433,6 +445,9 @@
     },
     {
         "name": "PluralRules",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules#Parameters"
+        },
         "input": [
             {
                 "name": "value",
@@ -494,6 +509,9 @@
     },
     {
         "name": "RelativeTimeFormat",
+        "links": {
+            "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RelativeTimeFormat#Parameters"
+        },
         "input": [
             {
                 "name": "value",

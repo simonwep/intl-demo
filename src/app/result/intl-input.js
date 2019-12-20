@@ -1,9 +1,7 @@
 import {Component}          from 'preact';
 import {observer}           from 'mobx-preact';
-import {index}              from '../../state';
-import apis                 from '../../../assets/apis';
 import {resolveFormElement} from '../../components/form/form';
-import './intl-input.scss';
+import {index}              from '../../state';
 
 @observer
 export class IntlInput extends Component {
@@ -12,7 +10,7 @@ export class IntlInput extends Component {
     };
 
     render() {
-        const {input} = apis.find(v => v.name === index.api);
+        const {input} = index.getAPI();
 
         const inputs = input.map(op => {
             const currentValue = index.input[op.name];

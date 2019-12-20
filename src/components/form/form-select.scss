@@ -1,7 +1,7 @@
 .form-select {
     @include flex(row);
-    flex-wrap: wrap;
     overflow: hidden;
+    overflow-x: auto;
     padding: 0;
 
     > button {

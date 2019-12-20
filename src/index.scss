@@ -21,12 +21,12 @@ html {
 }
 
 #app {
-    @include width(65vw, 15em, 60em);
-    @include height(80vh, 30em, 40em);
+    @include width(75vw, 15em, 70em);
+    @include height(85vh, 30em, 45em);
     @include position(0, 0, 0, 0);
     @include flex(row);
     background: $color-white;
-    box-shadow: 0 0.3em 1em rgba(#000, 0.1);
+    box-shadow: 0 0.5em 1.5em rgba(#000, 0.15);
     padding: 1em;
     margin: auto;
     position: fixed;
@@ -49,5 +49,35 @@ html {
     > p {
         @include size(100%, 2px);
         background: $color-mid-gray;
+    }
+}
+
+
+@include breakpoint-desktop {
+    #app {
+        min-width: 100%;
+        min-height: 100%;
+        max-height: unset;
+    }
+}
+
+@include breakpoint-mobile {
+    #app {
+        flex-direction: column;
+        overflow: auto;
+
+        .left,
+        .right {
+            width: 100%;
+            margin: 0;
+        }
+
+        .right {
+            flex-grow: 1;
+        }
+
+        > p {
+            display: none;
+        }
     }
 }

@@ -2,6 +2,7 @@ import {Component}          from 'preact';
 import {observer}           from 'mobx-preact';
 import {resolveFormElement} from '../../components/form/form';
 import {index}              from '../../state';
+import './intl-input.scss';
 
 @observer
 export class IntlInput extends Component {

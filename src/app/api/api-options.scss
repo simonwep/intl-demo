@@ -3,7 +3,6 @@
     @include font(bold, 1.2em);
     @include size(100%);
     margin-top: 0.5em;
-    padding-right: 0.75em;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -13,5 +12,11 @@
         text-decoration: none;
         border-bottom: 2px solid currentColor;
         margin-bottom: 0.25em;
+    }
+}
+
+@include breakpoint-mobile {
+    #api-options {
+        overflow: visible;
     }
 }

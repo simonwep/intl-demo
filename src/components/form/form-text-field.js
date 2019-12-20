@@ -1,7 +1,7 @@
 import base        from './base.scss';
 import {Component} from 'preact';
 
-export class FormTextField extends Component  {
+export class FormTextField extends Component {
 
     onChange = e => {
         this.props.onInput(e.target.value);

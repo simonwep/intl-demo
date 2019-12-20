@@ -20,7 +20,7 @@
 .options {
     @include flex(column, flex-start);
     position: absolute;
-    max-height: 30vh;
+    max-height: 70vh;
     overflow: auto;
     margin-top: 0.5em;
     box-shadow: 0 0.15em 0.35em rgba(#000, 0.15);
@@ -39,9 +39,9 @@
         @include font(600, 1em);
         position: relative;
         transition: all 0.3s;
-        color: rgba(#000, 0.9);
+        color: $color-dark-gray;
         cursor: pointer;
-        padding: 0.5em 0.75em;
+        padding: 0.65em 0.85em;
         width: 100%;
 
         &.selected {

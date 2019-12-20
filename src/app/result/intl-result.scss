@@ -9,3 +9,9 @@
         @include font(600, 1.2em);
     }
 }
+
+@mixin breakpoint-mobile {
+    #intl-result {
+        height: 100%;
+    }
+}

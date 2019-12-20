@@ -22,7 +22,7 @@ export default (config, env, helpers) => {
     const sassLoader = findLoaderByName(helpers.getLoaders(config), 'sass-loader');
     sassLoader.options.data = `
         @import '~sassyfication';
-        @import 'src/styles/global.scss';
+        @import 'src/styles/_global.scss';
     `;
 
     Object.assign(config.resolve.alias, {

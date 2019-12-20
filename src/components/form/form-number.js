@@ -35,7 +35,9 @@ export class FormNumber extends Component {
     }
 
     componentWillUnmount() {
-        this.eventListeners.forEach(off);
+        for (const args of this.eventListeners) {
+            off(...args);
+        }
     }
 
     render({value, min, max}) {

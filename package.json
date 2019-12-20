@@ -21,6 +21,8 @@
         "sassyfication": "^0.2.0"
     },
     "dependencies": {
+        "mobx": "^5.15.1",
+        "mobx-preact": "^3.0.0",
         "popper.js": "^1.16.0",
         "preact": "^10.1.1",
         "preact-render-to-string": "^5.1.2"

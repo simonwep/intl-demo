@@ -1,0 +1,6 @@
+#intl-result {
+    @include flex(row, center, center);
+    @include font(600, 1.2em);
+    text-align: center;
+    flex-grow: 1;
+}

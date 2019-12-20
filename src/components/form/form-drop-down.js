@@ -1,9 +1,9 @@
 import {Component, createRef} from 'preact';
-import styles                 from './text-select.scss';
+import styles                 from './form-drop-down.scss';
 import {classnames}           from '../../js/classnames';
 import Popper                 from 'popper.js';
 
-export class TextSelect extends Component {
+export class FormDropDown extends Component {
     popperContainer = createRef();
     popperReference = createRef();
     popperInstance = null;
@@ -25,7 +25,6 @@ export class TextSelect extends Component {
     };
 
     componentDidMount() {
-
         this.popperInstance = new Popper(
             this.popperContainer.current,
             this.popperReference.current,
@@ -36,8 +35,7 @@ export class TextSelect extends Component {
                 ],
                 modifiers: {
                     preventOverflow: {
-                        boundariesElement: document.getElementById('app'),
-                        escapeWithReference: true
+                        boundariesElement: document.getElementById('app')
                     }
                 }
             }

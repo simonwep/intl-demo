@@ -1,0 +1,9 @@
+#api-options {
+    @include flex(column, flex-start);
+    @include font(bold, 1.2em);
+    @include size(100%);
+    margin-top: 0.5em;
+    padding-right: 0.75em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

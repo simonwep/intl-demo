@@ -33,8 +33,17 @@ html {
     position: fixed;
     overflow: hidden;
 
-    .left {
+    .left,
+    .right {
         @include flex(column);
         width: 50%;
+    }
+
+    .left {
+        margin-right: 0.5em;
+    }
+
+    .right {
+        margin-left: 0.5em;
     }
 }

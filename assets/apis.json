@@ -1,0 +1,548 @@
+[
+    {
+        "name": "Collator",
+        "input": [
+            {
+                "name": "values",
+                "type": "text",
+                "value": "a, b, c"
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup",
+                    "best fit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "usage",
+                "value": "sort",
+                "values": [
+                    "sort",
+                    "search"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "sensitivity",
+                "value": "variant",
+                "values": [
+                    "variant",
+                    "case",
+                    "accent",
+                    "base"
+                ]
+            },
+            {
+                "type": "switch",
+                "name": "ignorePunctuation",
+                "value": false
+            },
+            {
+                "type": "switch",
+                "name": "numeric",
+                "value": false
+            },
+            {
+                "type": "select",
+                "name": "caseFirst",
+                "value": "false",
+                "values": [
+                    "upper",
+                    "lower",
+                    "false"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "DateTimeFormat",
+        "input": [
+            {
+                "name": "year",
+                "type": "number",
+                "value": 2019,
+                "min": 0
+            },
+            {
+                "name": "month",
+                "type": "number",
+                "value": 11,
+                "min": 0,
+                "max": 11
+            },
+            {
+                "name": "day",
+                "type": "number",
+                "value": 16,
+                "min": 0,
+                "max": 31
+            },
+            {
+                "name": "hours",
+                "type": "number",
+                "value": 18,
+                "min": 0,
+                "max": 24
+            },
+            {
+                "name": "minutes",
+                "type": "number",
+                "value": 25,
+                "min": 0,
+                "max": 59
+            },
+            {
+                "name": "seconds",
+                "type": "number",
+                "value": 22,
+                "min": 0,
+                "max": 59
+            },
+            {
+                "name": "milliseconds",
+                "type": "number",
+                "value": 395,
+                "min": 0,
+                "max": 1000
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "dateStyle",
+                "value": "full",
+                "values": [
+                    "full",
+                    "long",
+                    "medium",
+                    "short"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "timeStyle",
+                "value": "full",
+                "values": [
+                    "full",
+                    "long",
+                    "medium",
+                    "short"
+                ]
+            },
+            {
+                "type": "number",
+                "name": "fractionalSecondDigits",
+                "value": 0,
+                "min": 0,
+                "max": 3
+            },
+            {
+                "type": "drop-down",
+                "name": "calendar",
+                "value": "iso8601",
+                "values": [
+                    "buddhist", "chinese", "coptic", "ethiopia", "ethiopic",
+                    "gregory", " hebrew", "indian", "islamic", "iso8601",
+                    "japanese", "persian", "roc"
+                ]
+            },
+            {
+                "type": "drop-down",
+                "name": "numberingSystem",
+                "value": "arab",
+                "values": [
+                    "arab", "arabext", "bali", "beng", "deva", "fullwide",
+                    "gujr", "guru", "hanidec", "khmr", " knda", "laoo",
+                    "latn", "limb", "mlym", "mong", "mymr", "orya", "tamldec",
+                    "telu", "thai", "tibt"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup", "best fit"
+                ]
+            },
+            {
+                "type": "text",
+                "name": "timeZone",
+                "value": "America/New_York"
+            },
+            {
+                "type": "switch",
+                "name": "hour12",
+                "value": false
+            },
+            {
+                "type": "select",
+                "name": "hourCycle",
+                "value": "h24",
+                "values": [
+                    "h11", "h12", "h23", "h24"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "formatMatcher",
+                "value": "best fit",
+                "values": [
+                    "basic", "lookup", "best fit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "weekday",
+                "value": "long",
+                "values": [
+                    "long", "short", "narrow"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "era",
+                "value": "long",
+                "values": [
+                    "long", "short", "narrow"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "year",
+                "value": "numeric",
+                "values": [
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "drop-down",
+                "name": "month",
+                "value": "long",
+                "values": [
+                    "long", "short", "narrow",
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "day",
+                "value": "numeric",
+                "values": [
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "hour",
+                "value": "numeric",
+                "values": [
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "minute",
+                "value": "numeric",
+                "values": [
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "second",
+                "value": "numeric",
+                "values": [
+                    "numeric", "2-digit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "timeZoneName",
+                "value": "long",
+                "values": [
+                    "long", "short"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ListFormat",
+        "input": [
+            {
+                "name": "values",
+                "type": "text",
+                "value": "a, b, c"
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup",
+                    "best fit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "type",
+                "value": "conjunction",
+                "values": [
+                    "conjunction",
+                    "disjunction"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "style",
+                "value": "long",
+                "values": [
+                    "long", "short", "narrow"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "NumberFormat",
+        "input": [
+            {
+                "name": "value",
+                "type": "number",
+                "value": 4
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup",
+                    "best fit"
+                ]
+            },
+            {
+                "type": "drop-down",
+                "name": "style",
+                "value": "decimal",
+                "values": [
+                    "decimal",
+                    "currency",
+                    "percent",
+                    "unit"
+                ]
+            },
+            {
+                "type": "drop-down",
+                "name": "numberingSystem",
+                "value": "arab",
+                "values": [
+                    "arab", "arabext", "bali", "beng", "deva", "fullwide",
+                    "gujr", "guru", "hanidec", "khmr", " knda", "laoo",
+                    "latn", "limb", "mlym", "mong", "mymr", "orya", "tamldec",
+                    "telu", "thai", "tibt"
+                ]
+            },
+            {
+                "type": "text",
+                "name": "unit"
+            },
+            {
+                "type": "select",
+                "name": "unitDisplay",
+                "values": [
+                    "long",
+                    "short", "narrow"
+                ]
+            },
+            {
+                "type": "text",
+                "name": "currency"
+            },
+            {
+                "type": "text",
+                "name": "currencyDisplay",
+                "value": "symbol"
+            },
+            {
+                "type": "switch",
+                "name": "useGrouping",
+                "value": true
+            },
+            {
+                "type": "number",
+                "name": "minimumIntegerDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            },
+            {
+                "type": "number",
+                "name": "minimumFractionDigits",
+                "value": 0,
+                "min": 0,
+                "max": 20
+            },
+            {
+                "type": "number",
+                "name": "minimumSignificantDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            },
+            {
+                "type": "number",
+                "name": "maximumSignificantDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            },
+            {
+                "type": "drop-down",
+                "name": "notation",
+                "value": "standard",
+                "values": [
+                    "standard", "scientific", "engineering", "compact"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "PluralRules",
+        "input": [
+            {
+                "name": "value",
+                "type": "number",
+                "value": 4
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup",
+                    "best fit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "type",
+                "value": "cardinal",
+                "values": [
+                    "cardinal", "ordinal"
+                ]
+            },
+            {
+                "type": "number",
+                "name": "minimumIntegerDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            },
+            {
+                "type": "number",
+                "name": "minimumFractionDigits",
+                "value": 0,
+                "min": 0,
+                "max": 20
+            },
+            {
+                "type": "number",
+                "name": "minimumSignificantDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            },
+            {
+                "type": "number",
+                "name": "maximumSignificantDigits",
+                "value": 1,
+                "min": 1,
+                "max": 21
+            }
+        ]
+    },
+    {
+        "name": "RelativeTimeFormat",
+        "input": [
+            {
+                "name": "value",
+                "type": "number",
+                "value": 4
+            },
+            {
+                "name": "unit",
+                "type": "drop-down",
+                "value": "day",
+                "values": [
+                    "year", "quarter", "month", "week",
+                    "day", "hour", "minute", "second"
+                ]
+            }
+        ],
+        "options": [
+            {
+                "type": "text",
+                "name": "locales"
+            },
+            {
+                "type": "select",
+                "name": "localeMatcher",
+                "value": "best fit",
+                "values": [
+                    "lookup",
+                    "best fit"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "numeric",
+                "value": "always",
+                "values": [
+                    "always",
+                    "auto"
+                ]
+            },
+            {
+                "type": "select",
+                "name": "style",
+                "value": "long",
+                "values": [
+                    "long",
+                    "short",
+                    "narrow"
+                ]
+            }
+        ]
+    }
+]

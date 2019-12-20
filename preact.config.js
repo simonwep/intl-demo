@@ -5,10 +5,11 @@ const findLoaderByName = (rules, name) => {
             const loaderName = loader.loader;
 
             if (loaderName === 'proxy-loader') {
-                if(loader.options.loader === name) {
+                if (loader.options.loader === name) {
                     return loader.options;
                 }
-            } else if (loaderName === name) {
+            }
+            else if (loaderName === name) {
                 return loader;
             }
         }
@@ -22,7 +23,12 @@ export default (config, env, helpers) => {
     sassLoader.options.data = `
         @import '~sassyfication';
         @import 'src/styles/global.scss';
-    `
+    `;
+
+    Object.assign(config.resolve.alias, {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat'
+    });
 };
 
 

@@ -1,0 +1,21 @@
+.option {
+    @include flex(row, flex-start, space-between);
+    padding-top: 0.35em;
+    width: 100%;
+    font-size: 18px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid $color-light-gray;
+        padding-bottom: 0.35em;
+    }
+
+    > p {
+        font-family: $font-stack-code;
+        font-weight: bold;
+        font-size: 0.75em;
+        padding: 0.2em 0.4em;
+        border-radius: 0.15em;
+        margin-bottom: 0.2em;
+        background: $color-light-gray;
+    }
+}

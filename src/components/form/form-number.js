@@ -17,8 +17,7 @@ export class FormNumber {
         }
     }
 
-    render() {
-        const {value, min, max} = this.props;
+    render({value, min, max}) {
 
         return (
             <div className={classnames({

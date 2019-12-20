@@ -17,15 +17,10 @@
         cursor: pointer;
         font-family: $font-family;
 
-        .disabled {
+        &.disabled {
             cursor: not-allowed;
             pointer-events: none;
-            background: $color-light-gray;
-
-            > svg {
-                stroke: $color-mid-gray;
-                fill: $color-mid-gray;
-            }
+            background: $color-red;
         }
 
         &.decrease > svg {

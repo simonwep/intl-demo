@@ -1,5 +1,5 @@
 import {Component}  from 'preact';
-import {TextSelect} from '../components/text-select';
+import {TextSelect} from '../components/form/text-select';
 import './api-selection.scss';
 
 export class APISelection extends Component {

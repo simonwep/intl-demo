@@ -3,30 +3,48 @@ import forms           from '../../../assets/api-options';
 import {FormTextField} from '../../components/form/form-text-field';
 import {FormSelect}    from '../../components/form/form-select';
 import {FormSwitch}    from '../../components/form/form-switch';
-import './api-options.scss';
 import {FormNumber}    from '../../components/form/form-number';
-import {TextSelect}    from '../../components/text-select';
+import {TextSelect}    from '../../components/form/text-select';
+import './api-options.scss';
 
 /* eslint-disable no-console */
 
 /* eslint-disable react/prefer-stateless-function */
 export class APIOptions extends Component {
 
-    render({name}) {
-        const options = forms[(name || '')];
+    state = {
+        options: {}
+    };
 
-        if (!options) {
+    updateOption = name => value => {
+        this.setState({
+            ...this.state,
+            options: {
+                ...this.state.options,
+                [name]: value
+            }
+        });
+    };
+
+    render({name}, {options}) {
+        const baseOptions = forms[(name || '')];
+
+        if (!baseOptions) {
             return (<p>Not found</p>);
         }
 
-        const optionElements = options.map(op => {
+        const optionElements = baseOptions.map(op => {
+            const updateFunc = this.updateOption(op.name);
+            const currentValue = options[op.name] || null;
+
             switch (op.type) {
                 case 'text': {
                     return (
                         <div class="option">
                             <p>{op.name}</p>
-                            <FormTextField value={op.value || ''}
-                                onInput={console.log}/>
+                            <FormTextField value={currentValue || op.value || ''}
+                                onInput={updateFunc}
+                                data-name={op.name}/>
                         </div>
                     );
                 }
@@ -35,8 +53,9 @@ export class APIOptions extends Component {
                         <div class="option">
                             <p>{op.name}</p>
                             <FormSelect values={op.values}
-                                value={op.default || null}
-                                onSelect={console.log}/>
+                                value={currentValue || op.default || null}
+                                onSelect={updateFunc}
+                                data-name={op.name}/>
                         </div>
                     );
                 }
@@ -45,8 +64,9 @@ export class APIOptions extends Component {
                         <div class="option">
                             <p>{op.name}</p>
                             <TextSelect values={op.values}
-                                value={op.default || null}
-                                onSelect={console.log}/>
+                                value={currentValue || op.default || null}
+                                onSelect={updateFunc}
+                                data-name={op.name}/>
                         </div>
                     );
                 }
@@ -54,8 +74,9 @@ export class APIOptions extends Component {
                     return (
                         <div class="option">
                             <p>{op.name}</p>
-                            <FormSwitch value={op.default || Math.random() > 0.5}
-                                onChange={console.log}/>
+                            <FormSwitch value={currentValue || op.default}
+                                onChange={updateFunc}
+                                data-name={op.name}/>
                         </div>
                     );
                 }
@@ -63,11 +84,10 @@ export class APIOptions extends Component {
                     return (
                         <div class="option">
                             <p>{op.name}</p>
-                            <FormNumber value={op.value}
+                            <FormNumber value={currentValue || op.value}
                                 min={op.min}
                                 max={op.max}
-                                increase={console.log}
-                                decrease={console.log}/>
+                                onChange={updateFunc}/>
                         </div>
                     );
                 }

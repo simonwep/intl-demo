@@ -1,6 +1,6 @@
 import {Component, createRef} from 'preact';
 import styles                 from './text-select.scss';
-import {classnames}           from '../js/classnames';
+import {classnames}           from '../../js/classnames';
 import Popper                 from 'popper.js';
 
 export class TextSelect extends Component {

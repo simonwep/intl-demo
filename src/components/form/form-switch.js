@@ -11,7 +11,7 @@ export class FormSwitch {
 
     render({value}) {
         return (
-            <button className={classnames({
+            <button class={classnames({
                 [base['form-element']]: true,
                 [styles['form-switch']]: true,
                 [styles.selected]: value

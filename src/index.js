@@ -11,6 +11,7 @@ export default function App() {
                 <APISelection/>
                 <APIOptions/>
             </div>
+            <p/>
             <div class="right">
                 <IntlInput/>
                 <IntlResult/>

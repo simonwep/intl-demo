@@ -1,6 +1,11 @@
 #intl-result {
     @include flex(row, center, center);
-    @include font(600, 1.2em);
+    margin-top: 1em;
+    border-top: 2px solid $color-mid-gray;
     text-align: center;
     flex-grow: 1;
+
+    > p {
+        @include font(600, 1.2em);
+    }
 }

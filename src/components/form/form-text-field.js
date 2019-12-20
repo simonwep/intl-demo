@@ -8,7 +8,7 @@ export class FormTextField {
 
     render({value, placeholder}) {
         return (
-            <input className={base['form-element']}
+            <input class={base['form-element']}
                 placeholder={placeholder || 'Enter value here'}
                 value={value}
                 onInput={this.onChange}/>

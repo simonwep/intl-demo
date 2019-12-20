@@ -1,5 +1,6 @@
 import {Component, createRef} from 'preact';
 import styles                 from './form-drop-down.scss';
+import base                   from './base.scss';
 import {classnames}           from '../../js/classnames';
 import Popper                 from 'popper.js';
 
@@ -29,7 +30,7 @@ export class FormDropDown extends Component {
             this.popperContainer.current,
             this.popperReference.current,
             {
-                placement: 'bottom-end',
+                placement: 'bottom',
                 flip: [
                     'top', 'left', 'bottom', 'right'
                 ],
@@ -48,19 +49,25 @@ export class FormDropDown extends Component {
 
     render({values = [], value = null}, {open}) {
         return (
-            <div ref={this.popperContainer} className={styles.root}>
+            <div ref={this.popperContainer}
+                class={classnames({
+                    [styles['drop-down']]: true,
+                    [base['form-element']]: true
+                })}>
                 <p onClick={this.toggle}>{value}</p>
 
                 <div ref={this.popperReference}
-                    className={classnames({
+                    class={classnames({
                         [styles.options]: true,
                         [styles.visible]: open
                     })}>
 
-
                     {values.map(v => (
                         <p data-value={v}
-                            onClick={this.selectValue}>
+                            onClick={this.selectValue}
+                            class={classnames({
+                                [styles.selected]: v === value
+                            })}>
                             {v}
                         </p>
                     ))}

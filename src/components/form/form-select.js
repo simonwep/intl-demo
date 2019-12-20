@@ -11,7 +11,7 @@ export class FormSelect extends Component {
 
     render({values, value}) {
         return (
-            <div className={classnames({
+            <div class={classnames({
                 [base['form-element']]: true,
                 [styles['form-select']]: true
             })}>
@@ -20,7 +20,7 @@ export class FormSelect extends Component {
                     <button
                         data-value={v}
                         onClick={this.selectItem}
-                        className={
+                        class={
                             classnames({
                                 [styles.active]: value === v
                             })

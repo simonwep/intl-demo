@@ -19,7 +19,6 @@ export class APISelection extends Component {
     render(_, {apiList}) {
         return (
             <div id="api-selection">
-                <p>Intl.</p>
                 <FormDropDown values={apiList}
                     value={index.api}
                     onSelect={this.selectAPI}/>

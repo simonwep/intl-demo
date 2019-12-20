@@ -20,7 +20,7 @@ export class FormNumber {
     render({value, min, max}) {
 
         return (
-            <div className={classnames({
+            <div class={classnames({
                 [base['form-element']]: true,
                 [styles['form-number']]: true
             })}>

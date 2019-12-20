@@ -1,10 +1,8 @@
-.root {
+.drop-down {
     position: relative;
     user-select: none;
-    font: inherit;
 
     > p {
-        position: relative;
         font: inherit;
         background: transparent;
         border: none;
@@ -16,14 +14,6 @@
         &::placeholder {
             color: rgba(#000, 0.35);
         }
-
-        &::before {
-            @include pseudo();
-            @include size(2px, 100%);
-            background: currentColor;
-            bottom: 0;
-            left: 0;
-        }
     }
 }
 
@@ -32,10 +22,7 @@
     position: absolute;
     max-height: 30vh;
     overflow: auto;
-    padding: 0.5em 0.75em;
-    margin-left: -0.5em;
-    margin-top: 0.25em;
-    border-radius: 0.2em;
+    margin-top: 0.5em;
     box-shadow: 0 0.15em 0.5em rgba(#000, 0.1);
     transform: translateY(-0.5em) scaleY(0.5);
     transform-origin: center top;
@@ -53,18 +40,21 @@
     }
 
     > p {
-        @include font(600, 0.8em);
+        @include font(600, 1em);
         position: relative;
         transition: all 0.3s;
         color: rgba(#000, 0.9);
         cursor: pointer;
+        padding: 0.5em 0.75em;
+        width: 100%;
 
-        &:not(:last-child) {
-            margin-bottom: 0.5em;
+        &.selected {
+            color: $color-white;
+            background: $color-sky-blue;
         }
 
-        &:hover {
-            color: $color-sky-blue;
+        &:hover:not(.selected) {
+            background: $color-light-gray;
         }
     }
 }

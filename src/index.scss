@@ -26,7 +26,6 @@ html {
     @include position(0, 0, 0, 0);
     @include flex(row);
     background: $color-white;
-    border-radius: 0.75em;
     box-shadow: 0 0.3em 1em rgba(#000, 0.1);
     padding: 1em;
     margin: auto;
@@ -40,10 +39,15 @@ html {
     }
 
     .left {
-        margin-right: 0.5em;
+        margin-right: 0.75em;
     }
 
     .right {
-        margin-left: 0.5em;
+        margin-left: 0.75em;
+    }
+
+    > p {
+        @include size(100%, 2px);
+        background: $color-mid-gray;
     }
 }

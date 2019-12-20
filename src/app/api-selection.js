@@ -7,7 +7,7 @@ export class APISelection extends Component {
     state = {
         selectedAPI: 'DateTimeFormat',
         apiList: [
-            'Collator','DateTimeFormat', 'ListFormat',
+            'Collator', 'DateTimeFormat', 'ListFormat',
             'NumberFormat', 'PluralRules', 'RelativeTimeFormat'
         ]
     };

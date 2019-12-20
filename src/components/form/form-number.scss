@@ -5,6 +5,7 @@
     border-color: transparent;
 
     button {
+        @include flex(row, center, center);
         @include font(600);
         position: relative;
         color: $color-white;
@@ -20,13 +21,33 @@
             cursor: not-allowed;
             pointer-events: none;
             background: $color-light-gray;
+
+            > svg {
+                stroke: $color-mid-gray;
+                fill: $color-mid-gray;
+            }
+        }
+
+        &.decrease > svg {
+            transform: rotate(90deg);
+        }
+
+        &.increase > svg {
+            transform: rotate(-90deg);
+        }
+
+        > svg {
+            @include size(1.2em);
+            transition: all 0.3s;
+            stroke: $color-white;
+            fill: $color-white;
         }
     }
 
     .value {
         @include font(600, 0.8em);
         padding: 0 1em;
-        line-height: 2.1em;
+        line-height: 2.275em;
         background: $color-light-gray;
     }
 }

@@ -39,13 +39,14 @@
     box-shadow: 0 0.15em 0.5em rgba(#000, 0.1);
     transform: translateY(-0.5em) scaleY(0.5);
     transform-origin: center top;
+    transition: opacity 0.3s, transform 0.3s;
     background: $color-white;
-    transition: all 0.3s;
     pointer-events: none;
     z-index: 10;
     opacity: 0;
 
     &.visible {
+        transition: opacity 0.3s, transform 0s;
         opacity: 1;
         pointer-events: all;
         transform: none;

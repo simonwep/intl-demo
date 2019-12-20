@@ -1,8 +1,12 @@
-import {Component}  from 'preact';
-import styles       from './text-select.scss';
-import {classnames} from '../js/classnames';
+import {Component, createRef} from 'preact';
+import styles                 from './text-select.scss';
+import {classnames}           from '../js/classnames';
+import Popper                 from 'popper.js';
 
 export class TextSelect extends Component {
+    popperContainer = createRef();
+    popperReference = createRef();
+    popperInstance = null;
 
     state = {
         open: false
@@ -20,16 +24,41 @@ export class TextSelect extends Component {
         this.props.onSelect(e.target.dataset.value);
     };
 
+    componentDidMount() {
+
+        this.popperInstance = new Popper(
+            this.popperContainer.current,
+            this.popperReference.current,
+            {
+                placement: 'bottom-end',
+                flip: [
+                    'top', 'left', 'bottom', 'right'
+                ],
+                modifiers: {
+                    preventOverflow: {
+                        boundariesElement: document.getElementById('app'),
+                        escapeWithReference: true
+                    }
+                }
+            }
+        );
+    }
+
+    componentWillUnmount() {
+        this.popperInstance.destroy();
+    }
+
     render({values = [], value = null}, {open}) {
         return (
-            <div className={styles.root}>
+            <div ref={this.popperContainer} className={styles.root}>
                 <p onClick={this.toggle}>{value}</p>
 
-                <div
+                <div ref={this.popperReference}
                     className={classnames({
                         [styles.options]: true,
                         [styles.visible]: open
                     })}>
+
 
                     {values.map(v => (
                         <p data-value={v}

@@ -1,8 +1,9 @@
 import base         from './base.scss';
 import styles       from './form-switch.scss';
 import {classnames} from '../../js/classnames';
+import {Component}  from 'preact';
 
-export class FormSwitch {
+export class FormSwitch extends Component  {
 
     onChange = () => {
         const {value, onChange} = this.props;

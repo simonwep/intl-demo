@@ -28,6 +28,7 @@
     background: $color-white;
     pointer-events: none;
     opacity: 0;
+    z-index: 100;
 
     &.visible {
         pointer-events: all;

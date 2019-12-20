@@ -2,7 +2,7 @@ import {observable} from 'mobx';
 import apis         from '../../assets/apis';
 
 export const index = observable({
-    api: 'ListFormat',
+    api: apis[Math.floor(Math.random() * apis.length)].name,
     options: {},
     input: {},
 

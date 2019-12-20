@@ -1,9 +1,13 @@
-import styles       from './form-number.scss';
-import base         from './base.scss';
-import {classnames} from '../../js/classnames';
-import React        from 'preact/compat';
+import styles                 from './form-number.scss';
+import base                   from './base.scss';
+import {classnames}           from '../../js/classnames';
+import React                  from 'preact/compat';
+import {Component, createRef} from 'preact';
+import {off, on}              from '../../js/event-listener';
 
-export class FormNumber {
+export class FormNumber extends Component {
+    eventListeners = [];
+    rootEl = createRef();
 
     increase = this.emit.bind(this, 1);
     decrease = this.emit.bind(this, -1);
@@ -17,13 +21,30 @@ export class FormNumber {
         }
     }
 
+    componentDidMount() {
+        const root = this.rootEl.current;
+
+        this.eventListeners = [
+            on(root, 'wheel', e => {
+                if (root.contains(document.activeElement)) {
+                    this[e.deltaY > 0 ? 'increase' : 'decrease']();
+                    e.preventDefault();
+                }
+            })
+        ];
+    }
+
+    componentWillUnmount() {
+        this.eventListeners.forEach(off);
+    }
+
     render({value, min, max}) {
 
         return (
             <div class={classnames({
                 [base['form-element']]: true,
                 [styles['form-number']]: true
-            })}>
+            })} ref={this.rootEl}>
                 <button class={classnames({
                     [styles.decrease]: true,
                     [styles.disabled]: (value - 1) < min

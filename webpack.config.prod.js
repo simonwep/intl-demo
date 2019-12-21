@@ -79,7 +79,7 @@ module.exports = {
             Fragment: ['preact', 'Fragment']
         }),
 
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'public/index.html',
@@ -97,7 +97,13 @@ module.exports = {
             skipWaiting: true
         }),
 
-        new WebappWebpackPlugin(`${__dirname}/src/assets/logo.svg`),
+        new WebappWebpackPlugin({
+            logo: `${__dirname}/src/assets/logo.svg`,
+            outputPath: 'assets',
+            publicPath: 'assets',
+            prefix: ''
+        }),
+
         new CleanWebpackPlugin()
     ]
 };

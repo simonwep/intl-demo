@@ -1,11 +1,11 @@
 ::-webkit-scrollbar {
-    width: 0.3em;
-    background: transparent;
+    width: 0.5em;
 }
 
 ::-webkit-scrollbar-thumb {
     background: $color-mid-gray;
-    border-radius: 0;
+    background-clip: content-box;
+    border-left: 5px solid transparent;
 }
 
 * {
@@ -49,6 +49,7 @@ html {
     > p {
         @include size(100%, 2px);
         background: $color-mid-gray;
+        flex-shrink: 0;
     }
 }
 

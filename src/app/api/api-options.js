@@ -7,7 +7,7 @@ import {resolveFormElement} from '../../components/form/form';
 @observer
 export class APIOptions extends Component {
     updateOption = name => value => {
-        index.options[name] = value;
+        index.options[name] = value || undefined; // Empty strings and null would throw an error
     };
 
     render() {

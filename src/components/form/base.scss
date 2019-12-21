@@ -6,7 +6,7 @@
     background: $color-white;
     border: 1px solid $color-mid-gray;
     padding: 0.65em 0.75em;
-    transition: all 0.3s;
+    transition: all $transition-duration-base;
 
     &::placeholder {
         color: rgba(#000, 0.2);

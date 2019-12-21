@@ -10,9 +10,9 @@ export class FormTextField extends Component {
     render({value, placeholder}) {
         return (
             <input class={base['form-element']}
-                placeholder={placeholder || 'Enter value here'}
-                value={value}
-                onInput={this.onChange}/>
+                   placeholder={placeholder || 'Enter value here'}
+                   value={value}
+                   onInput={this.onChange}/>
         );
     }
 }

@@ -1,5 +1,7 @@
 #intl-result {
-    @include flex(row, center, center);
+    @include flex(column, center, center);
+    font-family: $font-stack-code;
+    font-weight: 600;
     margin-top: 1em;
     border-top: 2px solid $color-mid-gray;
     text-align: center;
@@ -7,11 +9,32 @@
 
     > p {
         @include font(600, 1.2em);
+        transition: all $transition-duration-base;
+    }
+
+    > svg {
+        @include size(7.5vmin);
+        transform: scale(0);
+        transition: all $transition-duration-base;
+        opacity: 0;
+    }
+
+    &.errored {
+        > p {
+            color: $color-red;
+            margin-top: 0.5em;
+        }
+
+        > svg {
+            transform: none;
+            opacity: 1;
+        }
     }
 }
 
-@mixin breakpoint-mobile {
+@include breakpoint-mobile {
     #intl-result {
         height: 100%;
+        padding: 5vh 0;
     }
 }

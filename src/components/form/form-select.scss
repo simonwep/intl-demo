@@ -6,7 +6,7 @@
 
     > button {
         padding: 0.65em 0.75em;
-        transition: all 0.3s;
+        transition: all $transition-duration-base;
         font-weight: 600;
         font-family: $font-family;
         text-transform: capitalize;

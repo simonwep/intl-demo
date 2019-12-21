@@ -14,7 +14,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",
@@ -125,7 +126,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",
@@ -301,7 +303,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",
@@ -346,7 +349,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",
@@ -458,7 +462,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",
@@ -531,7 +536,8 @@
         "options": [
             {
                 "type": "text",
-                "name": "locales"
+                "name": "locales",
+                "value": "en-US"
             },
             {
                 "type": "select",

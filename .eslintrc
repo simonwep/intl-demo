@@ -12,16 +12,18 @@
         "sourceType": "module"
     },
     "rules": {
-        "react/jsx-closing-bracket-location": 0,
-        "react/jsx-curly-spacing": 2,
-        "react/jsx-tag-spacing": [2, { "beforeSelfClosing": "never" }],
-        "react/jsx-indent-props": "off",
-        "react/jsx-wrap-multilines": 0,
+        "react/jsx-closing-bracket-location": "off",
+        "react/jsx-curly-spacing": "error",
+        "react/jsx-tag-spacing": ["error", {"beforeSelfClosing": "never"}],
+        "react/jsx-indent-props": ["error", "first"],
+        "react/jsx-first-props-per-line": "off",
+        "react/jsx-wrap-multilines": "off",
+        "react/jsx-indent": ["error", 4],
         "object-curly-spacing": ["error", "never"],
         "no-cond-assign": "off",
         "no-console": "error",
         "keyword-spacing": "warn",
         "eqeqeq": "error",
-        "indent": ["error", 4, { "SwitchCase": 1 }]
+        "indent": ["off", 4, {"SwitchCase": 1}]
     }
 }

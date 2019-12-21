@@ -22,8 +22,8 @@ export class APISelection extends Component {
         return (
             <div id="api-selection">
                 <FormDropDown values={apiList}
-                    value={name}
-                    onSelect={this.selectAPI}/>
+                              value={name}
+                              onSelect={this.selectAPI}/>
                 <a href={links.params}>
                     <svg version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path

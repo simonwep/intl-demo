@@ -23,8 +23,9 @@
     max-height: 70vh;
     overflow: auto;
     margin-top: 0.5em;
+    min-width: 10em;
     box-shadow: 0 0.15em 0.35em rgba(#000, 0.15);
-    transition: all 0.3s;
+    transition: all $transition-duration-base;
     background: $color-white;
     pointer-events: none;
     opacity: 0;
@@ -38,7 +39,7 @@
     > p {
         @include font(600, 1em);
         position: relative;
-        transition: all 0.3s;
+        transition: all $transition-duration-base;
         color: $color-dark-gray;
         cursor: pointer;
         padding: 0.65em 0.85em;

@@ -1,5 +1,5 @@
 $width: 48px;
-$height: 26px;
+$height: 24px;
 $kpadding: 3px;
 $radius: 50em;
 
@@ -7,7 +7,7 @@ $radius: 50em;
     @include size($height, $width);
     position: relative;
     border-radius: $radius;
-    transition: all 0.3s;
+    transition: all $transition-duration-base;
     cursor: pointer;
     padding: 0;
 
@@ -22,7 +22,7 @@ $radius: 50em;
         margin: $kpadding;
         border-radius: $radius;
         background: $color-mid-gray;
-        transition: all 0.3s;
+        transition: all $transition-duration-base;
     }
 
     &.selected {

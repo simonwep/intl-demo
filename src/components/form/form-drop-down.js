@@ -50,22 +50,22 @@ export class FormDropDown extends Component {
     render({values = [], value = null}, {open}) {
         return (
             <div ref={this.popperContainer}
-                class={classnames({
+                 class={classnames({
                     [styles['drop-down']]: true,
                     [base['form-element']]: true
                 })}>
                 <p onClick={this.toggle}>{value}</p>
 
                 <div ref={this.popperReference}
-                    class={classnames({
+                     class={classnames({
                         [styles.options]: true,
                         [styles.visible]: open
                     })}>
 
                     {values.map(v => (
                         <p data-value={v}
-                            onClick={this.selectValue}
-                            class={classnames({
+                           onClick={this.selectValue}
+                           class={classnames({
                                 [styles.selected]: v === value
                             })}>
                             {v}

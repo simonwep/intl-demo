@@ -7,7 +7,7 @@ import './intl-input.scss';
 @observer
 export class IntlInput extends Component {
     updateInput = name => value => {
-        index.input[name] = value;
+        index.input[name] = value || undefined; // Empty strings and null would throw an error
     };
 
     render() {

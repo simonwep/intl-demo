@@ -2,21 +2,37 @@
     @include flex(column, flex-start);
     @include font(bold, 1.2em);
     @include size(100%);
-    margin-top: 0.5em;
     overflow-y: auto;
     overflow-x: hidden;
+    margin-top: 0.5em;
 
-    > a {
-        color: $color-dark-gray;
+    > button {
+        display: none;
         width: 100%;
-        text-decoration: none;
-        border-bottom: 2px solid currentColor;
-        margin-bottom: 0.25em;
+        padding: 0.5em 0;
+        font-weight: bold;
+        background: $color-sky-blue;
+        color: $color-white;
+    }
+
+    .options {
+        @include flex(column, flex-start);
+        @include size(100%);
+    }
+
+    &.collapsed {
+        .options {
+            display: none;
+        }
     }
 }
 
 @include breakpoint-mobile {
     #api-options {
         overflow: visible;
+
+        > button {
+            display: block;
+        }
     }
 }

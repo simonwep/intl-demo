@@ -20,6 +20,14 @@ html {
     font-family: $font-family;
 }
 
+button,
+input,
+textarea {
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
 #app {
     @include width(75vw, 15em, 70em);
     @include height(85vh, 30em, 45em);

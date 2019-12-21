@@ -10,13 +10,12 @@
         padding-bottom: 0.35em;
     }
 
-    > p {
+    > code {
         font-family: $font-stack-code;
         color: $color-dark-gray;
         font-weight: bold;
         font-size: 0.75em;
         padding: 0.2em 0.4em;
-        border-radius: 0.15em;
         margin-bottom: 0.2em;
         margin-right: 0.2em;
         background: $color-light-gray;

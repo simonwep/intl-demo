@@ -10,7 +10,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
         case 'text': {
             return (
                 <div class={style.option}>
-                    <p>{option.name}</p>
+                    <code>{option.name}</code>
                     <FormTextField value={currentValue}
                                    onInput={onUpdate}
                                    data-name={option.name}/>
@@ -20,7 +20,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
         case 'select': {
             return (
                 <div class={style.option}>
-                    <p>{option.name}</p>
+                    <code>{option.name}</code>
                     <FormSelect values={option.values}
                                 value={currentValue}
                                 onSelect={onUpdate}
@@ -31,7 +31,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
         case 'drop-down': {
             return (
                 <div class={style.option}>
-                    <p>{option.name}</p>
+                    <code>{option.name}</code>
                     <FormDropDown values={option.values}
                                   value={currentValue}
                                   onSelect={onUpdate}
@@ -42,7 +42,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
         case 'switch': {
             return (
                 <div class={style.option}>
-                    <p>{option.name}</p>
+                    <code>{option.name}</code>
                     <FormSwitch value={currentValue}
                                 onChange={onUpdate}
                                 data-name={option.name}/>
@@ -52,7 +52,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
         case 'number': {
             return (
                 <div class={style.option}>
-                    <p>{option.name}</p>
+                    <code>{option.name}</code>
                     <FormNumber value={currentValue}
                                 min={typeof option.min === 'number' ? option.min : Number.MIN_SAFE_INTEGER}
                                 max={typeof option.max === 'number' ? option.max : Number.MAX_SAFE_INTEGER}

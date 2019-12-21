@@ -9,8 +9,6 @@
         @include font(600);
         position: relative;
         color: $color-white;
-        outline: none;
-        border: none;
         background: $color-sky-blue;
         transition: all $transition-duration-base;
         padding: 0.65em 0.75em;

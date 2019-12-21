@@ -12,7 +12,7 @@ export class APIOptions extends Component {
     };
 
     updateOption = name => value => {
-        index.options[name] = value || undefined; // Empty strings and null would throw an error
+        index.options[name] = value;
     };
 
     toggleCollapse = () => {

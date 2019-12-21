@@ -16,7 +16,7 @@ export class IntlResult extends Component {
         try {
             result = execIntl(api, options, input);
         }
-        catch (e) {
+ catch (e) {
             error = e.message;
         }
 

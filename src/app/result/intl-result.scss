@@ -10,6 +10,7 @@
     > p {
         @include font(600, 1.2em);
         transition: all $transition-duration-base;
+        white-space: pre-line;
     }
 
     > svg {
@@ -35,6 +36,6 @@
 @include breakpoint-mobile {
     #intl-result {
         height: 100%;
-        padding: 5vh 0;
+        padding: 0 0 5vh;
     }
 }

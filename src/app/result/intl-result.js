@@ -60,6 +60,11 @@ function execIntl(api, options, input) {
     const {locales, ...serializedConfig} = serialize(options, apiTarget.options);
     const serializedInput = serialize(input, apiTarget.input);
 
+    // Check if API is available
+    if (typeof Intl[api] === 'undefined') {
+        throw new Error(`Intl.${api} isn't supported by your browser :/\nTry another option!`);
+    }
+
     switch (api) {
         case 'Collator': {
             return serializedInput.values.split(/,/g)

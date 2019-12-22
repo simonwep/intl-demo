@@ -20,7 +20,7 @@
 .options {
     @include flex(column, flex-start);
     position: absolute;
-    max-height: 70vh;
+    max-height: 40vh;
     overflow: auto;
     margin-top: 0.5em;
     min-width: 10em;

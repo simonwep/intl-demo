@@ -1,6 +1,5 @@
 .form-number {
     @include flex(row, stretch);
-    font-size: 1em;
     padding: 0;
     border-color: transparent;
 
@@ -38,9 +37,9 @@
     }
 
     .value {
-        @include font(600, 0.8em);
+        @include font(600, 1em);
         padding: 0 1em;
-        line-height: 2.275em;
+        line-height: 2.6em;
         background: $color-light-gray;
     }
 }

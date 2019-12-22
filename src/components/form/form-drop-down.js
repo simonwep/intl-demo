@@ -3,20 +3,29 @@ import styles                 from './form-drop-down.scss';
 import base                   from './base.scss';
 import {classnames}           from '../../js/classnames';
 import Popper                 from 'popper.js';
+import {off, on}              from '../../js/event-listener';
+import {eventPath}            from '../../js/event-path';
 
 export class FormDropDown extends Component {
     popperContainer = createRef();
     popperReference = createRef();
     popperInstance = null;
+    listener = [];
 
     state = {
         open: false
     };
 
-    toggle = open => {
+    toggle = e => {
+        const {open} = this.state;
+
+        if (!open) {
+            e.stopImmediatePropagation();
+        }
+
         this.setState({
             ...this.state,
-            open: typeof open === 'undefined' ? !this.state.open : open
+            open: !open
         });
     };
 
@@ -26,9 +35,12 @@ export class FormDropDown extends Component {
     };
 
     componentDidMount() {
+        const popperRef = this.popperReference.current;
+        const popperCon = this.popperContainer.current;
+
         this.popperInstance = new Popper(
-            this.popperContainer.current,
-            this.popperReference.current,
+            popperCon,
+            popperRef,
             {
                 placement: 'bottom',
                 flip: [
@@ -41,10 +53,23 @@ export class FormDropDown extends Component {
                 }
             }
         );
+
+        // Close if user clicks outside of it
+        this.listener = [
+            on(window, 'click', e => {
+                if (this.state.open && !eventPath(e).includes(popperRef)) {
+                    this.toggle();
+                }
+            })
+        ];
     }
 
     componentWillUnmount() {
         this.popperInstance.destroy();
+
+        for (const args of this.listener) {
+            off(...args);
+        }
     }
 
     render({values = [], value = null}, {open}) {

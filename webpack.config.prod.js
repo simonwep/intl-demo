@@ -79,6 +79,10 @@ module.exports = {
             Fragment: ['preact', 'Fragment']
         }),
 
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+
         // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -99,9 +103,18 @@ module.exports = {
 
         new WebappWebpackPlugin({
             logo: `${__dirname}/src/assets/logo.svg`,
-            outputPath: 'assets',
-            publicPath: 'assets',
-            prefix: ''
+            outputPath: '',
+            publicPath: './',
+            prefix: '',
+            favicons: {
+                appName: 'Intl Demo',
+                appDescription: 'Intl API Demo',
+                developerName: 'Simon Reinisch',
+                developerURL: 'https://github.com/Simonwep',
+                background: '#fff',
+                theme_color: '#2e2e2e',
+                start_url: '.'
+            }
         }),
 
         new CleanWebpackPlugin()

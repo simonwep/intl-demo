@@ -3,6 +3,7 @@ import {APIOptions}   from './app/api/api-options';
 import {APISelection} from './app/api/api-selection';
 import {IntlResult}   from './app/result/intl-result';
 import {IntlInput}    from './app/result/intl-input';
+import './register-service-worker';
 import './index.scss';
 
 render(

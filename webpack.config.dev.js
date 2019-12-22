@@ -81,6 +81,10 @@ module.exports = {
             Fragment: ['preact', 'Fragment']
         }),
 
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development')
+        }),
+
         new HtmlWebpackPlugin({
             template: 'public/index.html',
             inject: true

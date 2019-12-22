@@ -49,7 +49,7 @@ function serialize(source, template) {
 
     for (const {name, value} of template) {
         const sourceValue = source[name];
-        serialized[name] = typeof sourceValue !== 'undefined' ? sourceValue : value;
+        serialized[name] = typeof sourceValue !== 'undefined' ? (sourceValue || undefined) : value;
     }
 
     return serialized;
@@ -85,6 +85,20 @@ function execIntl(api, options, input) {
         case 'ListFormat': {
             return new Intl.ListFormat(locales, serializedConfig)
                 .format(serializedInput.values.split(/,/g));
+        }
+        case 'Locale': {
+            const inst = new Intl.Locale(locales, serializedConfig);
+            const properties = [
+                'baseName', 'calendar', 'collation', 'hourCycle', 'caseFirst',
+                'numeric', 'numberingSystem', 'language', 'script', 'region'
+            ];
+
+            const props = [];
+            for (const prop of properties) {
+                props.push(`locale.${prop} = ${inst[prop] || '[unset]'}`);
+            }
+
+            return props.join('\n');
         }
         case 'NumberFormat': {
             return new Intl.NumberFormat(locales, serializedConfig)

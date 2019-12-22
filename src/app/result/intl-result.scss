@@ -2,8 +2,6 @@
     @include flex(column, center, center);
     font-family: $font-stack-code;
     font-weight: 600;
-    margin-top: 1em;
-    border-top: 2px solid $color-mid-gray;
     text-align: center;
     flex-grow: 1;
 

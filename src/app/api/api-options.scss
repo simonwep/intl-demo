@@ -15,6 +15,36 @@
         color: $color-white;
     }
 
+    .acknowledge-default-value {
+        @include flex(row, center, space-between);
+        @include font(600, 0.7em);
+        width: 100%;
+        padding: 0.5em 1em;
+        border-left: 2px solid $color-mid-gray;
+        background: $color-light-gray;
+        color: $color-dark-gray;
+
+        > button {
+            @include font(600, 0.85em);
+            color: $color-white;
+            background: $color-sky-blue;
+            padding: 0.45em 0.75em;
+            border-radius: 0.25em;
+            box-shadow: 0 0.1em 0.5em rgba(black, 0.1);
+            transition: all 0.3s;
+            text-transform: uppercase;
+
+            &:hover {
+                box-shadow: 0 0.1em 0.65em rgba(black, 0.15);
+                filter: brightness(1.1);
+            }
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
     .options {
         @include flex(column, flex-start);
         @include size(100%);
@@ -30,6 +60,15 @@
 @include breakpoint-mobile {
     #api-options {
         overflow: visible;
+
+        .acknowledge-default-value {
+            margin-top: 0.5em;
+
+            > button {
+                font-size: 0.95em;
+                margin-left: 0.5em;
+            }
+        }
 
         > button {
             display: block;

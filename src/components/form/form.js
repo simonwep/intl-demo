@@ -13,6 +13,7 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
                     <code>{option.name}</code>
                     <FormTextField value={currentValue}
                                    onInput={onUpdate}
+                                   placeholder={option.value}
                                    data-name={option.name}/>
                 </div>
             );

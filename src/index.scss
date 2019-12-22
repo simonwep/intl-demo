@@ -31,6 +31,10 @@ textarea {
     background: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 #app {
     @include width(75vw, 15em, 70em);
     @include height(85vh, 30em, 45em);

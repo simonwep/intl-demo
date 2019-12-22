@@ -10,7 +10,6 @@
         transition: all $transition-duration-base;
         font-family: $font-family;
         text-transform: capitalize;
-        cursor: pointer;
 
         &.active {
             background: $color-sky-blue;

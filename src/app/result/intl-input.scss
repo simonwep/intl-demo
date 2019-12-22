@@ -1,8 +1,16 @@
+#intl-input {
+    border-bottom: 2px solid $color-mid-gray;
+    padding-bottom: 1em;
+
+    &:empty {
+        display: none;
+    }
+}
+
 @include breakpoint-mobile {
     #intl-input {
         border-top: 2px solid $color-light-gray;
         padding-top: 0.35em;
-        margin-top: 2em;
         margin-top: 1em;
     }
 }

@@ -43,6 +43,7 @@ export class FormDropDown extends Component {
             popperRef,
             {
                 placement: 'bottom',
+                positionFixed: true,
                 flip: [
                     'top', 'left', 'bottom', 'right'
                 ],

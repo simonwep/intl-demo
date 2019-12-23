@@ -1,0 +1,26 @@
+#footer {
+    @include flex(row, center, center);
+    @include font(700, 0.7em);
+    color: $color-dark-gray;
+
+    > svg {
+        height: 1em;
+        transform: scale(1.3);
+        fill: $color-red;
+        margin: 0 0.5em;
+    }
+
+    > p {
+        white-space: pre;
+    }
+
+    > a {
+        color: $color-dark-gray;
+        transition: all 0.3s;
+        margin-left: 0.35em;
+
+        &:hover {
+            color: $color-sky-blue;
+        }
+    }
+}

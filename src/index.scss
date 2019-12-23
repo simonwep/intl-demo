@@ -39,7 +39,7 @@ button {
     @include width(75vw, 15em, 70em);
     @include height(85vh, 30em, 45em);
     @include position(0, 0, 0, 0);
-    @include flex(row);
+    @include flex(column);
     background: $color-white;
     box-shadow: 0 0.5em 1.5em rgba(#000, 0.15);
     padding: 1em;
@@ -47,27 +47,37 @@ button {
     position: fixed;
     overflow: hidden;
 
-    .left,
-    .right {
-        @include flex(column);
-        width: 50%;
-    }
-
-    .left {
-        margin-right: 0.75em;
-    }
-
-    .right {
-        margin-left: 0.75em;
-    }
-
-    > p {
-        @include size(100%, 2px);
-        background: $color-mid-gray;
+    #footer {
         flex-shrink: 0;
+        padding-top: 1em;
+    }
+
+    .content {
+        @include flex(row);
+        min-height: 0;
+        flex-grow: 1;
+
+        .left,
+        .right {
+            @include flex(column);
+            width: 50%;
+        }
+
+        .left {
+            margin-right: 0.75em;
+        }
+
+        .right {
+            margin-left: 0.75em;
+        }
+
+        > p {
+            @include size(100%, 2px);
+            background: $color-mid-gray;
+            flex-shrink: 0;
+        }
     }
 }
-
 
 @include breakpoint-desktop {
     #app {
@@ -79,21 +89,30 @@ button {
 
 @include breakpoint-mobile {
     #app {
-        flex-direction: column;
         overflow: auto;
 
-        .left,
-        .right {
-            width: 100%;
-            margin: 0;
+        #footer {
+
         }
 
-        .right {
-            flex-grow: 1;
-        }
+        .content {
+            flex-direction: column;
+            min-height: min-content;
+            height: auto;
 
-        > p {
-            display: none;
+            .left,
+            .right {
+                width: 100%;
+                margin: 0;
+            }
+
+            .right {
+                flex-grow: 1;
+            }
+
+            > p {
+                display: none;
+            }
         }
     }
 }

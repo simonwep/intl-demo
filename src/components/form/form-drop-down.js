@@ -29,9 +29,9 @@ export class FormDropDown extends Component {
         });
     };
 
-    selectValue = e => {
+    selectValue = index => () => {
         this.toggle(false);
-        this.props.onSelect(e.target.dataset.value);
+        this.props.onSelect(index);
     };
 
     componentDidMount() {
@@ -73,14 +73,15 @@ export class FormDropDown extends Component {
         }
     }
 
-    render({values = [], value = null}, {open}) {
+    render({value = null, children = []}, {open}) {
         return (
             <div ref={this.popperContainer}
                  class={classnames({
                      [styles['drop-down']]: true,
                      [base['form-element']]: true
                  })}>
-                <p onClick={this.toggle}>{value}</p>
+
+                <p onClick={this.toggle}>{children[value]}</p>
 
                 <div ref={this.popperReference}
                      class={classnames({
@@ -88,14 +89,13 @@ export class FormDropDown extends Component {
                          [styles.visible]: open
                      })}>
 
-                    {values.map(v => (
-                        <p data-value={v}
-                           onClick={this.selectValue}
-                           class={classnames({
-                               [styles.selected]: v === value
-                           })}>
+                    {children.map((v, index) => (
+                        <div onClickCapture={this.selectValue(index)}
+                             class={classnames({
+                                 [styles.selected]: index === value
+                             })}>
                             {v}
-                        </p>
+                        </div>
                     ))}
                 </div>
             </div>

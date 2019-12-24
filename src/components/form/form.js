@@ -5,6 +5,9 @@ import {FormNumber}    from './form-number';
 import {FormTextField} from './form-text-field';
 import style           from './form.scss';
 
+const resolveValue = (updateListener, values) =>
+        index => updateListener(values[index]);
+
 export function resolveFormElement({option, currentValue, onUpdate}) {
     switch (option.type) {
         case 'text': {
@@ -33,10 +36,11 @@ export function resolveFormElement({option, currentValue, onUpdate}) {
             return (
                 <div class={style.option}>
                     <code>{option.name}</code>
-                    <FormDropDown values={option.values}
-                                  value={currentValue}
-                                  onSelect={onUpdate}
-                                  data-name={option.name}/>
+                    <FormDropDown value={option.values.indexOf(currentValue)}
+                                  onSelect={resolveValue(onUpdate, option.values)}
+                                  data-name={option.name}>
+                        {option.values.map(v => <p>{v}</p>)}
+                    </FormDropDown>
                 </div>
             );
         }

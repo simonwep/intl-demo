@@ -37,7 +37,7 @@
         opacity: 1;
     }
 
-    > p {
+    > div {
         @include font(600, 1em);
         position: relative;
         transition: all $transition-duration-base;

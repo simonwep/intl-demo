@@ -8,22 +8,39 @@ import './api-selection.scss';
 @observer
 export class APISelection extends Component {
 
-    state = {
-        apiList: apis.map(v => v.name)
+    selectAPI = loc => {
+        index.setAPI(apis[loc].name);
     };
 
-    selectAPI = name => {
-        index.setAPI(name);
-    };
-
-    render(_, {apiList}) {
+    render() {
         const {name, links} = index.getAPI();
 
         return (
             <div id="api-selection">
-                <FormDropDown values={apiList}
-                              value={name}
-                              onSelect={this.selectAPI}/>
+
+                <FormDropDown value={apis.findIndex(v => v.name === name)}
+                              onSelect={this.selectAPI}>
+                    {
+                        apis.map(v =>
+                            <div class="item">
+                                <span>{v.name}</span>
+                                {v.experimental ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <path fill="#90CAF9"
+                                          d="M29,21H19L7.206,35.143c-0.049,0.049-0.091,0.104-0.138,0.153l-0.24,0.269h0.02C6.324,36.24,6,37.078,6,38c0,2.209,1.791,4,4,4h28c2.209,0,4-1.791,4-4c0-0.891-0.301-1.705-0.793-2.369h0.015l-0.181-0.201c-0.092-0.108-0.181-0.219-0.283-0.316L29,21L29,21z"/>
+                                    <path fill="#90CAF9" d="M19 9H29V22.417H19z"/>
+                                    <path fill="#90CAF9"
+                                          d="M31,8c0,1.104-0.896,2-2,2H19c-1.104,0-2-0.896-2-2l0,0c0-1.104,0.896-2,2-2h10C30.104,6,31,6.896,31,8L31,8z"/>
+                                    <path fill="#F50057"
+                                          d="M39.601,36.822l-0.014-0.019l-0.034-0.038l-0.02-0.021l-0.019-0.021l-0.048-0.058c-0.031-0.037-0.061-0.075-0.095-0.109l-0.057-0.055l-0.047-0.053L32.672,28.5H15.323l-6.629,7.979l-0.036,0.04l-0.013,0.013c-0.038,0.044-0.068,0.079-0.099,0.111l-0.04,0.045l-0.078,0.102C8.233,37.042,8,37.457,8,38c0,1.103,0.897,2,2,2h28c1.103,0,2-0.897,2-2C40,37.472,39.782,37.068,39.601,36.822z"/>
+                                    <path fill="#F48FB1" d="M29 32A3 3 0 1 0 29 38A3 3 0 1 0 29 32Z"/>
+                                    <path fill="#F8BBD0" d="M22 30A2 2 0 1 0 22 34A2 2 0 1 0 22 30Z"/>
+                                    <path fill="#E3F2FD" d="M25 21A2 2 0 1 0 25 25 2 2 0 1 0 25 21zM23.5 15A1.5 1.5 0 1 0 23.5 18 1.5 1.5 0 1 0 23.5 15z"/>
+                                </svg> : ''}
+                            </div>
+                        )
+                    }
+                </FormDropDown>
+
                 <a href={links.params}>
                     <svg version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path

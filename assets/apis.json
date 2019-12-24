@@ -1,6 +1,7 @@
 [
     {
         "name": "Collator",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Collator#Parameters"
         },
@@ -70,6 +71,7 @@
     },
     {
         "name": "DateTimeFormat",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters"
         },
@@ -290,6 +292,7 @@
     },
     {
         "name": "ListFormat",
+        "experimental": true,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ListFormat#Parameters"
         },
@@ -336,6 +339,7 @@
     },
     {
         "name": "Locale",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Locale#Parameters"
         },
@@ -412,6 +416,7 @@
     },
     {
         "name": "NumberFormat",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat#Parameters"
         },
@@ -525,6 +530,7 @@
     },
     {
         "name": "PluralRules",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/PluralRules#Parameters"
         },
@@ -590,6 +596,7 @@
     },
     {
         "name": "RelativeTimeFormat",
+        "experimental": false,
         "links": {
             "params": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RelativeTimeFormat#Parameters"
         },

@@ -17,4 +17,13 @@
             }
         }
     }
+
+    .item {
+        @include flex(row, center, space-between);
+
+        > svg {
+            @include size(1.2em);
+            margin-left: 0.5em  ;
+        }
+    }
 }

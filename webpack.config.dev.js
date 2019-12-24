@@ -37,7 +37,12 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 include: path.resolve('src', 'components'),
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: true
+                        }
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -59,7 +64,12 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 exclude: path.resolve('src', 'components'),
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: true
+                        }
+                    },
                     'css-loader',
                     {
                         loader: 'sass-loader',

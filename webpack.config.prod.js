@@ -1,5 +1,4 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -95,17 +94,8 @@ module.exports = {
             filename: 'bundle.min.css'
         }),
 
-        new WorkBoxPlugin.GenerateSW({
-            swDest: 'sw.js',
-            clientsClaim: true,
-            skipWaiting: true
-        }),
-
         new WebappWebpackPlugin({
             logo: `${__dirname}/src/assets/logo.svg`,
-            outputPath: '',
-            publicPath: './',
-            prefix: '',
             favicons: {
                 appName: 'Intl Demo',
                 appDescription: 'Intl API Demo',
@@ -115,6 +105,12 @@ module.exports = {
                 theme_color: '#2e2e2e',
                 start_url: '.'
             }
+        }),
+
+        new WorkBoxPlugin.GenerateSW({
+            swDest: 'sw.js',
+            clientsClaim: true,
+            skipWaiting: true,
         }),
 
         new CleanWebpackPlugin()

@@ -43,7 +43,15 @@ export class FormDropDown extends Component {
             popperRef,
             {
                 strategy: 'fixed',
-                placement: 'bottom-start'
+                placement: 'bottom-start',
+                modifiers: [
+                    {
+                        name: 'offset',
+                        options: {
+                            offset: [0, 5]
+                        }
+                    }
+                ]
             }
         );
 
@@ -72,7 +80,7 @@ export class FormDropDown extends Component {
         return (
             <div ref={this.popperContainer}
                  class={classnames({
-                     [base['form-element']]: true  ,
+                     [base['form-element']]: true,
                      [styles['drop-down']]: true
                  })}>
 

@@ -1,6 +1,7 @@
 .drop-down {
     position: relative;
     user-select: none;
+    transition: none;
 
     > p {
         font: inherit;

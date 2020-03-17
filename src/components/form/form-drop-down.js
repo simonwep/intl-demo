@@ -2,7 +2,7 @@ import {Component, createRef} from 'preact';
 import styles                 from './form-drop-down.scss';
 import base                   from './base.scss';
 import {classnames}           from '../../js/classnames';
-import Popper                 from 'popper.js';
+import {createPopper}         from '@popperjs/core';
 import {off, on}              from '../../js/event-listener';
 import {eventPath}            from '../../js/event-path';
 
@@ -38,22 +38,17 @@ export class FormDropDown extends Component {
         const popperRef = this.popperReference.current;
         const popperCon = this.popperContainer.current;
 
-        this.popperInstance = new Popper(
+        this.popperInstance = createPopper(
             popperCon,
             popperRef,
             {
-                placement: 'bottom',
-                positionFixed: true,
-                flip: [
-                    'top', 'left', 'bottom', 'right'
-                ],
-                modifiers: {
-                    preventOverflow: {
-                        boundariesElement: document.getElementById('app')
-                    }
-                }
+                strategy: 'fixed',
+                placement: 'bottom-start'
             }
         );
+
+        // Move to initial position
+        this.popperInstance.forceUpdate();
 
         // Close if user clicks outside of it
         this.listener = [
@@ -77,8 +72,8 @@ export class FormDropDown extends Component {
         return (
             <div ref={this.popperContainer}
                  class={classnames({
-                     [styles['drop-down']]: true,
-                     [base['form-element']]: true
+                     [base['form-element']]: true  ,
+                     [styles['drop-down']]: true
                  })}>
 
                 <p onClick={this.toggle}>{children[value]}</p>

@@ -1,6 +1,6 @@
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkBoxPlugin = require('workbox-webpack-plugin');
 const webpack = require('webpack');
@@ -94,7 +94,7 @@ module.exports = {
             filename: 'bundle.min.css'
         }),
 
-        new WebappWebpackPlugin({
+        new FaviconsWebpackPlugin({
             logo: `${__dirname}/src/assets/logo.svg`,
             favicons: {
                 appName: 'Intl Demo',
@@ -102,15 +102,14 @@ module.exports = {
                 developerName: 'Simon Reinisch',
                 developerURL: 'https://github.com/Simonwep',
                 background: '#fff',
-                theme_color: '#2e2e2e',
-                start_url: '.'
+                theme_color: '#2e2e2e'
             }
         }),
 
         new WorkBoxPlugin.GenerateSW({
             swDest: 'sw.js',
             clientsClaim: true,
-            skipWaiting: true,
+            skipWaiting: true
         }),
 
         new CleanWebpackPlugin()

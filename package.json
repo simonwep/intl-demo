@@ -8,8 +8,7 @@
     "scripts": {
         "build": "webpack --config webpack.config.prod.js",
         "dev": "webpack-dev-server --config webpack.config.dev.js",
-        "lint": "eslint src --fix",
-        "deploy": "bash ./scripts/deploy-github-pages.sh"
+        "lint": "eslint src --fix"
     },
     "devDependencies": {
         "@babel/core": "^7.9.6",

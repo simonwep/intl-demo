@@ -44,7 +44,7 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            prependData: `
+                            additionalData: `
                               @import '~sassyfication';
                               @import 'src/styles/_global.scss';
                             `
@@ -61,7 +61,7 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            prependData: `
+                            additionalData: `
                               @import '~sassyfication';
                               @import 'src/styles/_global.scss';
                             `

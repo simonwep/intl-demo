@@ -38,12 +38,8 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 include: path.resolve('src', 'components'),
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: true
-                        }
-                    },
+
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -53,7 +49,7 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            prependData: `
+                            additionalData: `
                               @import '~sassyfication';
                               @import 'src/styles/_global.scss';
                             `
@@ -65,17 +61,12 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 exclude: path.resolve('src', 'components'),
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: true
-                        }
-                    },
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'sass-loader',
                         options: {
-                            prependData: `
+                            additionalData: `
                               @import '~sassyfication';
                               @import 'src/styles/_global.scss';
                             `

@@ -1,29 +1,32 @@
 name: Deployment
 
 on:
-  push:
-    branches: [ master ]
+    push:
+        branches: [ master ]
 
 jobs:
-  deploy:
+    deploy:
 
-    runs-on: ubuntu-latest
-    
-    env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Deploy using Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-        CI: true
-    - run: |
-        npm ci
-        npm run build
-        curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-        unzip -q awscliv2.zip
-        sudo ./aws/install
-        aws s3 sync ./dist s3://intl.reinisch.io
+        env:
+            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Deploy using Node.js 12.x
+                uses: actions/setup-node@v1
+                with:
+                    node-version: 12.x
+                    CI: true
+            -   run: |
+                    npm ci
+                    npm run build
+                    sudo apt-get install python3-setuptools
+                    python3 --version
+                    python3 -m pip install --user awscli
+                    aws s3 sync ./dist s3://intl.reinisch.io
+                    aws cloudfront create-invalidation \
+                      --distribution-id E1MALDI77Q51F5 \
+                      --paths "/*"
